@@ -1,0 +1,36 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "McLaren Paintings",
+      "description": "McLaren Mc Lego Paintings"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Mc Laren Mc Orange",
+      "description": "Orange Patal, 70x100cm, No Lightning",
+      "image": "img/179A2079.jpg",
+      "category": 1,
+      "price": 120000,
+      "created_at": "2024-09-27T18:42:29.705Z",
+      "updated_at": "2024-09-27T18:42:29.705Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "McLaren Mc35 Blue Sky",
+      "description": "Blue patal, With Lightning, 70x100cm",
+      "image": "img/179A2125.jpg",
+      "category": 1,
+      "price": 160000,
+      "created_at": "2024-09-27T18:43:49.597Z",
+      "updated_at": "2024-09-27T18:43:49.597Z"
+    }
+  }
+]

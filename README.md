@@ -12,3 +12,4 @@ https://github.com/AgataNovak/Project_course_6
 3. Add '/admin/' in the url string
 
 4. Add your Categories and Products to server database by adding information in form
+

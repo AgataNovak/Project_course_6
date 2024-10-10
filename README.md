@@ -13,3 +13,4 @@ https://github.com/AgataNovak/Project_course_6
 
 4. Add your Categories and Products to server database by adding information in form
 
+5. Чтобы перейти в блог добавьте в адресную строку /posts_list/

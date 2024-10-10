@@ -1,32 +1,31 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.urls import reverse_lazy, reverse
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import ListView, DetailView
+
 from catalog.models import Category, Product
 
-#
-# def home(request):
-#     return render(request, 'html/home.html')
-#
-#
-# def contacts(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         phone = request.POST.get('phone')
-#         message = request.POST.get('message')
-#         print(f'Name - {name}, phone - {phone}, message - {message}')
-#         return HttpResponse(f'Cпасибо, {name}, Ваше сообщение получено!')
-#     return render(request, 'html/contacts.html')
+
+class ProductListView(ListView):
+    model = Product
 
 
-def product_list(request):
-    products = Product.objects.all()
-    context = {'products': products}
-    return render(request, 'html/products_list.html', context)
+class ProductDetailView(DetailView):
+    model = Product
 
 
-def product_details(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    context = {'product': product}
-    return render(request, 'html/product_details.html', context)
+class ProductCreateView(CreateView):
+    model = Product
+    fields = ('name', 'description', 'image', 'category', 'price')
+    success_url = reverse_lazy('product_list')
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = ['name', 'description', 'image', 'category', 'price']
+    template_name = 'product_form.html'
+    success_url = reverse_lazy('product_list')
 
 
 def contacts(request):

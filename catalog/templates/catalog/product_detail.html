@@ -1,4 +1,4 @@
-{% extends 'html/index.html'%}
+{% extends 'catalog/index.html'%}
 {% load my_tags %}
 {% block content %}
 <div class="album py-5 bg-body-tertiary">
@@ -15,7 +15,8 @@
               <p class="card-text">{{ product.price }} руб.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-outline-secondary">В корзину</button>
+                    <a class="btn btn-primary" href="{% url 'catalog:product_list'%}" role="button">Назад</a>
+                    <button type="button" class="btn btn-outline-secondary">В корзину</button>
                 </div>
                 <small class="text-body-secondary">Обновлено</small>
               </div>
